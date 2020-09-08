@@ -54,9 +54,6 @@ namespace Pokemon
 
             }            
         }
-        public void PokemonMenu()
-        {
-            Console.WriteLine(" ######################################");
-        }
+    
     }
 }
