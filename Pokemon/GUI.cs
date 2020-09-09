@@ -13,47 +13,44 @@ namespace Pokemon
 
         public void PokemonAreana(Pokemon pikachu, Pokemon magikrap)
         {
-            
             GameController GC = new GameController();
-
 
             //Pikachu = x
             //Magikrap = y
-            while (pikachu.Hp >= magikrap.Hp || magikrap.Hp >= pikachu.Hp)
+            while (pikachu.MaxHp >= magikrap.MaxHp || magikrap.MaxHp >= pikachu.MaxHp)
             {
-                if (pikachu.Hp <= 0)
+                if (pikachu.MaxHp <= 0)
                 {
                     Console.WriteLine(pikachu.Pokename + " fainted");
                     Console.ReadKey();
                     Environment.Exit(0);
                 }
-                else if(pikachu.Hp >= 0)
+                else if (pikachu.CurrentHp >= 0)
                 {
                     Console.WriteLine("Pikachu Used Attack " + pikachu.Attack);
-                    magikrap.Hp -= pikachu.Attack;
+                    magikrap.MaxHp -= pikachu.Attack;
                     GC.HealthCheck(pikachu, magikrap);
-                    Console.WriteLine("Magikarp HP " + magikrap.Hp + "\n");
+                    Console.WriteLine("Magikarp HP " + magikrap.MaxHp + "\n");
                     Console.ReadKey();
 
                 }
 
-                if (magikrap.Hp <= 0)
+                if (magikrap.MaxHp <= 0)
                 {
                     Console.WriteLine(magikrap.Pokename + " fainted");
                     Console.ReadKey();
                     Environment.Exit(0);
                 }
-                else if (magikrap.Hp >= 0)
+                else if (magikrap.CurrentHp >= 0)
                 {
                     Console.WriteLine("Magikarp Used Attack " + magikrap.Attack);
-                    pikachu.Hp -= magikrap.Attack;
+                    pikachu.MaxHp -= magikrap.Attack;
                     GC.HealthCheck(pikachu, magikrap);
-                    Console.WriteLine("Pikachu HP " + pikachu.Hp + "\n");
+                    Console.WriteLine("Pikachu HP " + pikachu.MaxHp + "\n");
                     Console.ReadKey();
                 }
 
-            }            
+            }
         }
-    
     }
 }

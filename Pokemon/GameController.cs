@@ -11,14 +11,14 @@ namespace Pokemon
     {
         public void HealthCheck(Pokemon x, Pokemon y)
         {
-            if(x.Hp <= 0)
+            if(x.MaxHp <= 0)
             {
-                x.Hp = 0;                
+                x.MaxHp = 0;                
             }
 
-            if(y.Hp <= 0)
+            if(y.MaxHp <= 0)
             {
-                y.Hp = 0;                
+                y.MaxHp = 0;                
             }
         }
     }

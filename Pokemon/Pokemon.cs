@@ -25,12 +25,20 @@ namespace Pokemon
             set { type = value; }
         }
 
-        private int hp;
+        private int maxhp;
        
-        public int Hp
+        public int MaxHp
         {
-            get { return hp; }
-            set { hp = value; }
+            get { return maxhp; }
+            set { maxhp = value; }
+        }
+
+        private int currentHp;
+
+        public int CurrentHp
+        {
+            get { return currentHp; }
+            set { currentHp = value; }
         }
 
         private int attack;
@@ -64,27 +72,26 @@ namespace Pokemon
             get { return isFainted; }
             set { isFainted = value; }
         }
-        
 
-        public Pokemon(string pokename, string type, int hp, int attack, int defence, int speed)
+        private int catchRate;
+
+        public int Catchrate
+        {
+            get { return catchRate; }
+            set { catchRate = value; }
+        }
+        
+        public Pokemon(string pokename, string type, int maxHp, int currentHp, int attack, int defence, int speed, int catchRate)
         {
             Pokename = pokename;
             Type = type;
-            Hp = hp;
+            MaxHp = maxHp;
+            CurrentHp = currentHp;
             Attack = attack;
             Defence = defence;
             Speed = speed;
-            IsFainted = isFainted;           
+            IsFainted = isFainted;
+            Catchrate = catchRate;
         }
-
-
-        void TakeDamage(int attack)
-        {
-            if(attack >= hp)
-            {
-                isFainted = true;
-            }
-        }
-
     }
 }
